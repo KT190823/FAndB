@@ -16,7 +16,7 @@ yarn-error.log
 /AppMobile/ios
 /android
 /ReactNative/node_modules
-
+/package-lock.json
 
 # IDEs and editors
 .idea/
