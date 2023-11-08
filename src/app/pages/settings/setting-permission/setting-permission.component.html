@@ -1,0 +1,133 @@
+<div class="liPages">
+  <div class="LayerParent">
+    <div class="head-in-column-right">
+      <div class="title-column-right">
+        <!-- <p>Chỉnh sửa Quyền hạn</p> -->
+      </div>
+      <button
+        mat-raised-button
+        class="button-column-right my-custom-style button-cus"
+        tabindex="1"
+        (click)="addRole()"
+      >
+        Thêm quyền hạn
+      </button>
+    </div>
+
+    <div
+      style="
+        height: auto;
+        width: 100%;
+        width: 100%;
+        display: grid;
+        grid: auto/auto auto auto;
+        justify-content: space-between;
+      "
+    >
+      <ng-container *ngFor="let itemRole of role?.items">
+        <mat-card
+          style="
+            display: flex;
+            flex-direction: column;
+            height: 300px;
+            width: 250px;
+            justify-content: space-between;
+          "
+        >
+          <div
+            style="
+              height: calc(100% - 48px);
+              display: flex;
+              flex-direction: column;
+              justify-content: flex-start;
+              padding: 10px;
+            "
+          >
+            <div
+              style="
+                height: 60px;
+                font-size: 20px;
+                font-style: normal;
+                font-weight: 700;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+              "
+            >
+              {{ itemRole.name }}
+            </div>
+            <div>
+              <ng-container *ngFor="let itemPermission of itemRole.permissions">
+                <div
+                  style="
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                  "
+                >
+                  <ng-container
+                    *ngIf="itemPermission.isGranted == true; else falses"
+                  >
+                    <div>{{ itemPermission.displayName }}</div>
+                  </ng-container>
+                  <ng-template #falses>
+                    <div style="color: #d0d0d0">
+                      {{ itemPermission.displayName }}
+                    </div>
+                  </ng-template>
+                </div>
+              </ng-container>
+            </div>
+          </div>
+          <!-- Nút chỉnh sửa -->
+          <div
+            class="my-background-50"
+            style="
+              height: 48px;
+              display: flex;
+              flex-direction: row;
+              justify-content: center;
+              cursor: pointer;
+            "
+            matRipple
+            [matRippleDisabled]="false"
+            (click)="editRole(itemRole.id)"
+          >
+            <div
+              style="
+                height: 48px;
+                width: 48px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+              "
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 16 16"
+                fill="none"
+              >
+                <path
+                  d="M14.9512 14.0078C15.2543 14.0078 15.5 14.2486 15.5 14.5457C15.5 14.8181 15.2935 15.0431 15.0257 15.0787L14.9512 15.0837H9.22583C8.92274 15.0837 8.67705 14.8428 8.67705 14.5457C8.67705 14.2734 8.8835 14.0483 9.15136 14.0127L9.22583 14.0078H14.9512ZM9.38269 1.68084C10.4217 0.662376 12.1069 0.662376 13.1459 1.68084L14.2245 2.73816C15.2635 3.75662 15.2635 5.40853 14.2245 6.42699L6.11717 14.3742C5.65359 14.8286 5.02506 15.0836 4.36901 15.0836H1.04878C0.740346 15.0836 0.492487 14.8345 0.500174 14.5322L0.583693 11.2482C0.600298 10.6275 0.859392 10.0358 1.30722 9.59678L9.38269 1.68084ZM8.755 3.81616L2.08331 10.3575C1.83438 10.6016 1.69012 10.9311 1.68089 11.2757L1.61121 14.0073L4.36901 14.0077C4.69352 14.0077 5.00559 13.8957 5.2519 13.6934L5.34108 13.6134L12.0458 7.04116L8.755 3.81616ZM12.3698 2.4416C11.7594 1.84329 10.7691 1.84329 10.1588 2.4416L9.53167 3.05533L12.8217 6.28033L13.4484 5.66623C14.0249 5.10117 14.0569 4.20393 13.5445 3.60195L13.4484 3.49892L12.3698 2.4416Z"
+                  fill="#A48374"
+                />
+              </svg>
+            </div>
+            <div
+              class="my-custom-text"
+              style="
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+              "
+            >
+              Thay đổi quyền hạn
+            </div>
+          </div>
+        </mat-card>
+      </ng-container>
+    </div>
+  </div>
+</div>

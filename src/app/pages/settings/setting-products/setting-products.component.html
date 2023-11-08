@@ -1,0 +1,161 @@
+<div class="liPages">
+  <div class="LayerParent">
+    <div class="head-in-column-right">
+      <div class="title-column-right">
+        <!-- <p>Chỉnh sửa thực đơn</p> -->
+      </div>
+
+      <button mat-raised-button class="button-cus" (click)="onAddCategory()">
+        Thêm loại món
+      </button>
+    </div>
+    <div>
+      <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="start">
+        <mat-tab label="All">
+          <cdk-virtual-scroll-viewport
+            appendOnly
+            itemSize="1"
+            class="example-viewport"
+            style="padding-bottom: 5px"
+          >
+            <mat-card style="width: auto; box-shadow: none">
+              <mat-card-content
+                matRipple
+                [matRippleCentered]="false"
+                [matRippleDisabled]="false"
+                class="test-button-add"
+                (click)="edit()"
+              >
+                <div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 20 20"
+                    fill="none"
+                  >
+                    <path
+                      d="M10 2.5V10M10 17.5V10M10 10H17.5M10 10H2.5"
+                      stroke="#6d4c41"
+                      stroke-width="1.8"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                  <p>Add new dish</p>
+                </div>
+              </mat-card-content>
+            </mat-card>
+            <mat-card *ngFor="let item of menu" (click)="edit(item.id)">
+              <mat-card-content style="padding: 0">
+                <div
+                  style="width: 10rem; height: 10rem; text-align-last: center"
+                >
+                  <img
+                    style="max-width: 10rem; max-height: 10rem"
+                    src="{{ item.imagePath1 }}"
+                    alt=""
+                  />
+                </div>
+                <div
+                  style="
+                    display: flex;
+                    flex-direction: column;
+                    padding: 5px 10px;
+                    position: absolute;
+                    bottom: 0;
+                  "
+                >
+                  <span>{{ item.itemName }}</span>
+                </div>
+                <div style="position: absolute; right: 0; padding: 5px 10px">
+                  <span>{{ item.unitPrice | currency : "VND" : "" }}₫</span>
+                </div>
+              </mat-card-content>
+            </mat-card>
+          </cdk-virtual-scroll-viewport>
+        </mat-tab>
+
+        <ng-container *ngFor="let itemcate of category">
+          <mat-tab label="{{ itemcate.categoryName }}">
+            <cdk-virtual-scroll-viewport
+              appendOnly
+              itemSize="1"
+              class="example-viewport"
+            >
+              <mat-card style="width: 10rem; box-shadow: none">
+                <mat-card-content
+                  matRipple
+                  [matRippleCentered]="false"
+                  [matRippleDisabled]="false"
+                  class="test-button-add"
+                  (click)="edit()"
+                >
+                  <div>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 20 20"
+                      fill="none"
+                    >
+                      <path
+                        d="M10 2.5V10M10 17.5V10M10 10H17.5M10 10H2.5"
+                        stroke="#6d4c41"
+                        stroke-width="1.8"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                    <p>Add new dish</p>
+                  </div>
+                </mat-card-content>
+              </mat-card>
+
+              <ng-container *ngFor="let items of menu">
+                <mat-card
+                  *ngIf="itemcate.id == items.categoryId"
+                  (click)="edit(items.id)"
+                >
+                  <mat-card-content style="padding: 0">
+                    <div
+                      style="
+                        width: 10rem;
+                        height: 10rem;
+                        text-align-last: center;
+                      "
+                    >
+                      <img
+                        style="max-width: 10rem; max-height: 10rem"
+                        src="{{ items.imagePath1 }}"
+                        alt=""
+                      />
+                    </div>
+                    <div
+                      style="
+                        display: flex;
+                        flex-direction: column;
+                        padding: 5px 10px;
+                        position: absolute;
+                        bottom: 0;
+                      "
+                    >
+                      <span>{{ items.itemName }}</span>
+                    </div>
+                    <div
+                      style="position: absolute; right: 0; padding: 5px 10px"
+                    >
+                      <span
+                        >{{ items.unitPrice | currency : "VND" : "" }}₫</span
+                      >
+                    </div>
+                  </mat-card-content>
+                </mat-card>
+              </ng-container>
+            </cdk-virtual-scroll-viewport>
+          </mat-tab>
+        </ng-container>
+      </mat-tab-group>
+    </div>
+  </div>
+</div>

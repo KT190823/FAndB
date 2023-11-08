@@ -1,0 +1,126 @@
+$XS: 480px;
+$SM: 768px;
+$MD: 960px;
+$XL: 1280px;
+$XXL: 1480px;
+
+@mixin Responsive($canvas) {
+  @if $canvas == XS {
+    @media only screen and (min-width: $XS) {
+      @content;
+    }
+  } @else if $canvas == SM {
+    @media only screen and (min-width: $SM) {
+      @content;
+    }
+  } @else if $canvas == MD {
+    @media only screen and (min-width: $MD) {
+      @content;
+    }
+  } @else if $canvas == XL {
+    @media only screen and (min-width: $XL) {
+      @content;
+    }
+  } @else if $canvas == XXL {
+    @media only screen and (min-width: $XXL) {
+      @content;
+    }
+  }
+}
+
+@include Responsive(XS) {
+  * {
+  }
+}
+
+.right-column {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  bottom: 0;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+.logo {
+  width: 90%;
+}
+.title {
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.content {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.fb-item {
+  width: 100%;
+  height: auto;
+  padding: 10px;
+}
+.gravatar {
+  width: 100%;
+  height: 90px;
+}
+.gravatar-title {
+  width: auto;
+  padding: 10px;
+  height: 80px;
+}
+
+.first-section-wrapper,
+.second-section-wrapper {
+  width: 100%;
+  height: auto;
+  flex: 1;
+}
+
+.first-section-wrapper {
+  display: inline-flex;
+}
+
+.second-section-wrapper {
+  margin-top: 30px;
+}
+
+.wrapper {
+  width: 100%;
+  flex: 1;
+}
+.text {
+  position: relative;
+}
+.textaaa {
+  position: relative;
+  width: fit-content;
+}
+.textabc {
+  font-size: 1.24rem;
+}
+.textabc::before,
+.textabc::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.textabc::before {
+  background: whitesmoke;
+  animation: typerwriter 1s steps(24) forwards;
+}
+@keyframes typerwriter {
+  to {
+    left: 100%;
+  }
+}
+#chart {
+  padding: 0;
+  max-width: 450px;
+  margin: 35px auto;
+}

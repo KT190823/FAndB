@@ -1,0 +1,44 @@
+table {
+  padding: 0 1rem;
+
+  .mat-mdc-header-row {
+    border-bottom: 1px solid #9e9e9e;
+  }
+
+  .mat-mdc-header-row,
+  .mat-mdc-row {
+    display: flex;
+  }
+
+  th,
+  td {
+    padding: 1rem 0;
+    padding-right: 0.8rem;
+    &:nth-child(1) {
+      padding: 0.4rem 0;
+      flex: 0 0 40px;
+    }
+    &:nth-child(2) {
+      flex: 0 0 6rem;
+    }
+    &:nth-child(3) {
+      flex: 1 1 auto;
+    }
+    &:nth-child(4) {
+      flex: 0 0 8rem;
+    }
+    &:nth-child(5) {
+      flex: 0 0 8rem;
+    }
+    &:nth-child(6) {
+      flex: 0 0 16rem;
+    }
+    &:nth-child(7) {
+      flex: 0 0 40px;
+    }
+  }
+}
+
+.visible {
+  visibility: visible;
+}

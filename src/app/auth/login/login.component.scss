@@ -1,0 +1,150 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  .login-box {
+    width: 100vh;
+    height: 70vh;
+    background-color: rgba(255, 255, 255, 0.26);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    display: flex;
+    .login {
+      flex: 1;
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      .nameapp {
+        text-align: center;
+        .name {
+          font-size: 20px;
+          font-weight: 700;
+          font-style: normal;
+          color: #77b2ca;
+        }
+      }
+      .formlogin {
+        text-align: center;
+        .title {
+          text-align: left;
+          margin-bottom: 20px;
+        }
+        .input {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          .text {
+            width: 100%;
+            text-align: left;
+          }
+        }
+
+        .button {
+          margin: 10px 0px;
+          width: 100%;
+          height: 45px;
+          color: white;
+          padding: 10px 20px;
+          border: none;
+          border-radius: 5px;
+          background: #000;
+          font-family: "SF Pro Medium";
+          cursor: pointer;
+          &:hover {
+            box-shadow: 0 0 20px #000;
+            text-shadow: 0.1px 0.1px 3px rgba(255, 255, 255, 0.82);
+          }
+        }
+        .button1 {
+          margin: 10px 0px;
+          width: 100%;
+          height: 45px;
+          color: white;
+          padding: 10px 20px;
+          border: none;
+          border-radius: 5px;
+          background: #007bff;
+          font-family: "SF Pro Medium";
+          cursor: pointer;
+          &:hover {
+            box-shadow: 0 0 20px #007bff;
+            text-shadow: 0.1px 0.1px 3px rgba(255, 255, 255, 0.82);
+          }
+        }
+        .button2 {
+          margin: 10px 0px;
+          width: 100%;
+          height: 45px;
+          color: white;
+          padding: 10px 20px;
+          border: none;
+          border-radius: 5px;
+          background: #99a4ae;
+          font-family: "SF Pro Medium";
+          cursor: pointer;
+          &:hover {
+            box-shadow: 0 0 20px #99a4ae;
+            text-shadow: 0.1px 0.1px 3px rgba(255, 255, 255, 0.82);
+          }
+        }
+      }
+      .expand_more {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+    }
+    .image {
+      flex: 1;
+      padding: 15px;
+      .images {
+        height: 100%;
+        width: 100%;
+        border-radius: 15px;
+        background: #77b2ca;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .login-box {
+    max-width: 300px;
+  }
+}
+
+.theme-switch {
+  display: inline-block;
+  height: 34px;
+  position: relative;
+  width: 60px;
+}
+
+.theme-switch input {
+  display: none;
+}
+.example-container mat-form-field + mat-form-field {
+  margin-left: 8px;
+}
+
+.example-right-align {
+  text-align: right;
+}
+
+input.example-right-align::-webkit-outer-spin-button,
+input.example-right-align::-webkit-inner-spin-button {
+  display: none;
+}

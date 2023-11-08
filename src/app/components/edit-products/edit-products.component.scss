@@ -1,0 +1,59 @@
+.btn-add-picture {
+  width: 200px;
+  height: 200px;
+  border: 1px dashed #000;
+  border-radius: 5px;
+  margin: 2rem 0 2rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.div-in-line {
+  line-height: 1.3;
+  margin-bottom: 1.5rem;
+  p {
+    font-size: 18px;
+  }
+  mat-form-field {
+    height: 45px;
+    border: 1px solid var(--black-042, rgba(0, 0, 0, 0.42));
+    padding: 8px 12px;
+    width: -webkit-fill-available;
+    border-radius: 4px;
+  }
+  select {
+    height: 45px;
+    border: 1px solid var(--black-042, rgba(0, 0, 0, 0.42));
+    border-radius: 4px;
+    padding: 8px 12px;
+    width: -webkit-fill-available;
+  }
+}
+.btn-add-dish {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  height: 45px;
+  margin-top: 2rem;
+}
+.right-column {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+}
+.pages12 {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: nowrap;
+  background: #fdfdfd;
+  padding: 1rem;
+  justify-content: space-between;
+}

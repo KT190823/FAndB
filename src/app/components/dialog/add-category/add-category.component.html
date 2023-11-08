@@ -1,0 +1,33 @@
+<div class="heading3">Thêm loại món</div>
+<mat-form-field>
+  <mat-label>Category</mat-label>
+  <input matInput placeholder="Category" [(ngModel)]="data.categoryName" />
+</mat-form-field>
+<mat-form-field>
+  <mat-label>Có phải là nước uống?</mat-label>
+  <mat-select [(ngModel)]="data.isDrink">
+    <mat-option [value]="true">
+      Phải
+    </mat-option>
+    <mat-option [value]="false">
+      Không
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+<div mat-dialog-actions>
+  <button
+    mat-raised-button
+    style="background: #d9e7cb; color: #9cd67d"
+    (click)="onNoClick()"
+  >
+    Hủy
+  </button>
+  <button
+    mat-raised-button
+    class="headingBodyMedium"
+    style="background: #9cd67d; color: #0c3900"
+    [mat-dialog-close]="data"
+  >
+    Chấp nhận
+  </button>
+</div>

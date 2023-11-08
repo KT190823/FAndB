@@ -1,0 +1,89 @@
+.fab {
+  position: fixed;
+  bottom: 32px;
+  left: 32px;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  background: #ffffff;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-info {
+  margin-bottom: 1.2rem;
+  border-radius: 5px;
+  background: #fdfdfd;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  .info {
+    display: flex;
+    width: 100%;
+    padding: 0;
+    .left {
+      width: 50%;
+      padding: 1rem;
+    }
+    .right {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      padding: 1rem;
+    }
+  }
+}
+
+.button-details {
+  cursor: pointer;
+  background: floralwhite;
+  padding: 10px 20px;
+  text-align: center;
+  border-radius: 10px;
+  border: none;
+  &:hover {
+    background: rgb(250, 243, 229);
+  }
+  &:focus {
+    background: rgb(221, 79, 79);
+  }
+}
+.ptttoan {
+  background: #ffffff;
+  border-radius: 50px;
+  height: 35px;
+  width: 100%;
+  min-width: 100px;
+  display: flex;
+  align-items: center;
+  padding-left: 5px;
+  .texttt {
+    line-height: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+  }
+}
+
+.tableinvoice {
+  border-radius: 10px;
+}
+::ng-deep .mat-mdc-table {
+  background: white;
+  thead {
+    background: none !important;
+  }
+  tbody {
+    background: none !important;
+  }
+}
+.mdc-data-table__content {
+  background: none;
+}
+::ng-deep .mat-mdc-row,
+.mat-mdc-header-row {
+  font-family: "SF Pro Medium" !important;
+}

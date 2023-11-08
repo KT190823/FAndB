@@ -1,0 +1,12 @@
+.tableinvoice {
+  border-radius: 10px;
+}
+::ng-deep .mat-mdc-table {
+  background: white;
+  thead {
+    background: none !important;
+  }
+  tbody {
+    background: none !important;
+  }
+}

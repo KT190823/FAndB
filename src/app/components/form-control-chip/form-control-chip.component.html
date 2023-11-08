@@ -1,0 +1,32 @@
+<mat-form-field>
+    <mat-label>Khu vực</mat-label>
+    <mat-chip-grid #areaGrid aria-label="Fruit selection">
+      <mat-chip-row
+        *ngFor="let area of areasSelect"
+        (removed)="removeArea(area)"
+      >
+        {{ area }}
+        <button matChipRemove [attr.aria-label]="'remove ' + area" (click)="cancelArea(area)">
+          <mat-icon>cancel</mat-icon>
+        </button>
+      </mat-chip-row>
+    </mat-chip-grid>
+    <input
+      #areaInput
+      [matChipInputFor]="areaGrid"
+      [matAutocomplete]="auto"
+      (matChipInputTokenEnd)="addArea($event)"
+      [formControl]="areaCtrl"
+    />
+    <mat-autocomplete
+      #auto="matAutocomplete"
+      (optionSelected)="selectedArea($event)"
+    >
+      <mat-option
+        *ngFor="let area of filteredAreas"
+        [value]="area"
+      >
+        {{ area?.tableSectionName }}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>

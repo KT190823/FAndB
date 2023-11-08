@@ -1,0 +1,38 @@
+* {
+  box-sizing: border-box;
+}
+
+.pages12 {
+  height: inherit;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  background: #fdfdfd;
+  padding: 1rem;
+  overflow-y: auto;
+}
+.right-column {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  bottom: 0;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+
+.fr-second-toolbar {
+  display: none;
+}
+
+.liPages {
+  margin: 0 auto;
+  position: relative;
+  zoom: 1;
+}
+.LayerParent {
+  max-width: 860px;
+  min-width: 350px;
+  padding: 0 20px;
+  margin: 0 auto;
+}

@@ -1,0 +1,179 @@
+.btns {
+  display: flex;
+
+  .btn {
+    padding: 12px 28px !important;
+    margin-bottom: 1rem;
+    margin-right: 1rem;
+  }
+}
+
+.title-input {
+  display: inline-block;
+  width: 7rem;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.w-50 {
+  width: 48%;
+}
+
+.width-30 {
+  width: 30%;
+}
+
+.title-form-product,
+.form-product {
+  display: grid;
+  grid: auto/30% 20% 20% 20% 10%;
+  :nth-child(1) {
+  }
+  :nth-child(2) {
+  }
+  :nth-child(3) {
+  }
+  :nth-child(4) {
+  }
+  :nth-child(5) {
+    display: flex;
+    width: 22px;
+    height: 22px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    cursor: pointer;
+    border-radius: 5px;
+    background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.17) 0%,
+        rgba(255, 255, 255, 0) 100%
+      ),
+      #ff5f57;
+    box-shadow: 0px 0px 0px 0.5px rgba(255, 0, 0, 0.12),
+      0px 1px 2.5px 0px rgba(255, 0, 0, 0.24);
+  }
+
+  input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
+}
+
+.title-form-product {
+  margin: 0.8rem 0;
+  font-weight: 700;
+  :nth-child(5) {
+    flex: 0 0 3rem;
+    height: fit-content;
+    width: 48px;
+    border-radius: 0;
+    box-shadow: none;
+    cursor: none;
+    margin: 4px;
+  }
+}
+
+.mat-mdc-card-content:last-child {
+  padding-bottom: 0;
+}
+
+:host ::ng-deep .mat-date-range-input-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: -webkit-fill-available;
+}
+:host ::ng-deep .mat-date-range-input-inner {
+  font-size: 13px;
+}
+:host ::ng-deep .mat-mdc-chip.mat-mdc-standard-chip {
+  --mdc-chip-container-height: none;
+}
+:host ::ng-deep .mdc-evolution-chip-set .mdc-evolution-chip {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+:host ::ng-deep .mdc-evolution-chip-set__chips {
+  flex-flow: nowrap;
+}
+:host ::ng-deep .mat-mdc-standard-chip .mdc-evolution-chip__text-label {
+  font-size: 13px;
+}
+
+$XSS: 300px;
+$XS: 480px;
+$SM: 768px;
+$MD: 960px;
+$XL: 1280px;
+$XXL: 1480px;
+
+@mixin Responsive($canvas) {
+  @if $canvas == XSS {
+    @media only screen and (min-width: $XSS) {
+      @content;
+    }
+  }
+  @if $canvas == XS {
+    @media only screen and (min-width: $XS) {
+      @content;
+    }
+  } @else if $canvas == SM {
+    @media only screen and (min-width: $SM) {
+      @content;
+    }
+  } @else if $canvas == MD {
+    @media only screen and (min-width: $MD) {
+      @content;
+    }
+  } @else if $canvas == XL {
+    @media only screen and (min-width: $XL) {
+      @content;
+    }
+  } @else if $canvas == XXL {
+    @media only screen and (min-width: $XXL) {
+      @content;
+    }
+  }
+}
+@include Responsive(XSS) {
+  .pages1 {
+    width: -webkit-fill-available;
+  }
+  .infotable {
+    border-bottom: 1px solid #c0c0c0;
+    display: grid;
+    grid: auto/auto;
+  }
+}
+@include Responsive(XS) {
+  .pages1 {
+    width: -webkit-fill-available;
+  }
+}
+@include Responsive(SM) {
+  .infotable {
+    grid: auto/auto auto;
+  }
+}
+input.mat-mdc-chip-input {
+  flex: none;
+  margin-left: 0;
+}
+
+::ng-deep .mat-datepicker-toggle {
+  height: 24px;
+  width: 24px;
+  .mdc-icon-button,
+  .mat-mdc-icon-button,
+  .mat-unthemed,
+  .mat-mdc-button-base {
+    height: 24px;
+    width: 24px;
+    padding: 0;
+  }
+}
+::ng-deep .mat-date-range-input-wrapper {
+  width: 90%;
+}

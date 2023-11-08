@@ -1,0 +1,377 @@
+$XS: 300px;
+$SM: 768px;
+$MD: 960px;
+$XL: 1280px;
+$XXL: 1480px;
+
+@mixin Responsive($canvas) {
+  @if $canvas == XS {
+    @media only screen and (min-width: $XS) {
+      @content;
+    }
+  } @else if $canvas == SM {
+    @media only screen and (min-width: $SM) {
+      @content;
+    }
+  } @else if $canvas == MD {
+    @media only screen and (min-width: $MD) {
+      @content;
+    }
+  } @else if $canvas == XL {
+    @media only screen and (min-width: $XL) {
+      @content;
+    }
+  } @else if $canvas == XXL {
+    @media only screen and (min-width: $XXL) {
+      @content;
+    }
+  }
+}
+@include Responsive(XS) {
+  * {
+    font-size: 0.9rem;
+  }
+
+  .header {
+    .headline-title {
+      font-size: 1.2rem;
+    }
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  .coloum {
+    display: flex;
+
+    .description {
+      div:nth-child(1) {
+        flex: 1 1 auto;
+      }
+      div:nth-child(2) {
+        flex: 0 0 2.2rem;
+      }
+    }
+
+    .list-qty {
+      div:nth-child(1),
+      div:nth-child(3) {
+        flex: 0 0 22px;
+        svg {
+          width: 22px;
+          height: 22px;
+        }
+      }
+    }
+
+    .item-delete {
+      text-align: -webkit-right;
+      width: 1.2rem;
+      height: 22px;
+    }
+
+    div:nth-child(1) {
+      flex: 1 1 auto;
+
+      div:nth-child(1) {
+        width: 70%;
+      }
+      div:nth-child(2) {
+        width: 28%;
+      }
+
+      .name {
+        width: 100%;
+      }
+    }
+    div:nth-child(1) {
+      flex: 1 1 auto;
+    }
+    div:nth-child(2) {
+      flex: 0 0 5rem;
+    }
+    div:nth-child(3) {
+      flex: 0 0 5rem;
+    }
+  }
+}
+
+@include Responsive(SM) {
+  * {
+    font-size: 0.9rem;
+  }
+
+  .header {
+    .headline-title {
+      font-size: 1.3rem;
+    }
+    svg {
+      width: 22px;
+      height: 22px;
+    }
+  }
+
+  .coloum {
+    .description {
+      div:nth-child(2) {
+        flex: 0 0 2.3rem;
+      }
+    }
+
+    .list-qty {
+      div:nth-child(1),
+      div:nth-child(3) {
+        flex: 0 0 1.3rem;
+        svg {
+          width: 22px;
+          height: 22px;
+        }
+      }
+    }
+
+    .item-delete {
+      text-align: -webkit-right;
+      width: 1.3rem;
+      height: 22px;
+    }
+
+    div:nth-child(1) {
+      flex: 1 1 auto;
+    }
+    div:nth-child(2) {
+      flex: 0 0 5rem;
+    }
+    div:nth-child(3) {
+      flex: 0 0 5rem;
+    }
+  }
+}
+
+@include Responsive(MD) {
+  * {
+    font-size: 1rem;
+  }
+
+  .header {
+    .headline-title {
+      font-size: 1.4rem;
+    }
+  }
+
+  .coloum {
+    .description {
+      div:nth-child(2) {
+        flex: 0 0 2.5rem;
+      }
+    }
+
+    .list-qty {
+      div:nth-child(1),
+      div:nth-child(3) {
+        flex: 0 0 1.4rem;
+        svg {
+          width: 24px;
+          height: 24px;
+        }
+      }
+    }
+
+    .item-delete {
+      text-align: -webkit-right;
+      width: 1.4rem;
+      height: 22px;
+    }
+
+    div:nth-child(1) {
+      flex: 1 1 auto;
+    }
+    div:nth-child(2) {
+      flex: 0 0 6rem;
+    }
+    div:nth-child(3) {
+      flex: 0 0 6rem;
+    }
+  }
+}
+
+@include Responsive(XL) {
+  .header {
+    .headline-title {
+      font-size: 1.4rem;
+    }
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  .coloum {
+    .list-qty {
+      div:nth-child(1),
+      div:nth-child(3) {
+        flex: 0 0 1.4rem;
+        svg {
+          width: 24px;
+          height: 24px;
+        }
+      }
+    }
+
+    div:nth-child(3) {
+      flex: 0 0 5rem;
+    }
+  }
+}
+
+.top {
+  flex: 0 0 4.5rem;
+  .title {
+    text-align: center;
+    font-weight: bold;
+  }
+}
+
+.head-detail {
+  border-bottom: 1px solid #000;
+}
+
+.body-detail {
+  .food {
+    padding: 5px;
+    border-radius: 5px;
+    margin: 0.5rem 0rem;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #d5d5d5;
+    .column {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      height: 30px;
+
+      .row-5 {
+        flex: 6;
+      }
+      .row-2 {
+        flex: 2;
+      }
+    }
+    .more-info {
+      width: 100%;
+      display: flex;
+      .col-10 {
+        flex: 1 1 auto;
+      }
+      .col-2 {
+        flex: 0 0 3.2rem;
+      }
+
+      .col-10 {
+        input {
+          width: 100%;
+          padding: 0.64rem 0.4rem;
+          border: 1px solid #000;
+          border-radius: 4px;
+          box-sizing: border-box;
+        }
+      }
+
+      .col-2 {
+        mat-icon {
+          width: 1.6rem;
+          height: 1.6rem;
+          color: #ff0000;
+          display: flex;
+          justify-content: center;
+          border: 1px solid #ff0000;
+          border-radius: 4px;
+          padding: 0.4rem;
+          margin-left: 0.8rem;
+        }
+      }
+    }
+  }
+}
+
+.bot {
+  margin: 10px 0px;
+  border: 1px solid #000;
+  border-radius: 8px;
+  width: 100%;
+  padding: 10px;
+  .bot-up {
+    padding: 0.4rem;
+  }
+  .sub-total,
+  .discount,
+  .total {
+    display: flex;
+
+    .col-10 {
+      flex: 1 1 auto;
+    }
+    .col-2 {
+      flex: 0 0 5.2rem;
+      text-align: end;
+    }
+  }
+
+  .discount {
+    .col-10 {
+      display: flex;
+      align-items: center;
+      .text {
+        flex: 1 1 auto;
+      }
+      .discount-number {
+        input {
+          width: 2.4rem;
+          box-sizing: border-box;
+          border: 0px;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+
+  .total {
+    font-size: 1.5rem;
+    padding: 0.4rem;
+    .total-number,
+    .text {
+      position: relative;
+      top: 0;
+      left: 0;
+    }
+
+    .total-number {
+      text-align: end;
+    }
+  }
+
+  .bot-down {
+    display: block;
+    .btn-list {
+      display: flex;
+      justify-content: space-around;
+      .btn-payment,
+      .btn-cancel {
+        border: 1px solid #000;
+        padding: 0.8rem;
+        border-radius: 8px;
+      }
+    }
+  }
+}
+
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+.mid {
+  width: 100%;
+}
+
+input:focus {
+  outline: none;
+}

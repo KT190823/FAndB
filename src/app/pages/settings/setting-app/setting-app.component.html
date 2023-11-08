@@ -1,0 +1,81 @@
+<div class="liPages">
+  <div class="LayerParent">
+    <div class="head-in-column-right">
+      <div class="title-column-right">
+        <!-- <p>Chỉnh sửa Thông tin nhà hàng</p> -->
+      </div>
+      <button
+        mat-raised-button
+        class="button-column-right my-custom-style button-cus"
+        tabindex="1"
+        (click)="onSubmit()"
+      >
+        Lưu thay đổi
+      </button>
+    </div>
+    <div class="bodyyy my-background-50 box-setting">
+      <div class="col1">
+        <div class="row1">
+          <div class="name-col heading4">Tên nhà hàng</div>
+        </div>
+        <div class="row2">
+          <input
+            class="inputt"
+            style="
+              padding: 10px;
+              width: 100%;
+              text-align-last: right;
+              box-shadow: none;
+              background: none;
+            "
+            type="text"
+            placeholder="Nhập tên máy in"
+            [(ngModel)]="nameRestaraunt"
+          />
+        </div>
+        <!-- <div>
+          <select
+            style="margin-right: 1rem"
+            [(ngModel)]="valuepx"
+            matNativeControl
+            required
+          >
+            <option value="20">20px</option>
+            <option value="30">30px</option>
+          </select>
+        </div> -->
+        <!-- <div class="headingBodyLight">
+          <mat-slider
+            min="10"
+            max="100"
+            showTickMarks
+            discrete
+            [displayWith]="formatLabel"
+          >
+            <input matSliderThumb [(ngModel)]="valuepx" />
+          </mat-slider>
+        </div> -->
+      </div>
+
+      <div class="col1 col2">
+        <div class="row1">
+          <div class="name-col heading4">Địa chỉ nhà hàng</div>
+        </div>
+        <div class="row2">
+          <input
+            class="inputt"
+            style="
+              width: 100%;
+              text-align-last: right;
+              box-shadow: none;
+              background: none;
+            "
+            type="text"
+            placeholder="Nhập địa chỉ"
+            [(ngModel)]="addressRestaraunt"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,110 @@
+@use "@angular/material" as mat;
+$ordercf-test-primary: mat.define-palette(mat.$brown-palette);
+
+.row-1 {
+  .headline-title {
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 140%;
+  }
+}
+.row-2 {
+  padding: 0.5rem 0;
+  display: flex;
+
+  .col-9 {
+    flex: 5;
+    background: none;
+    // box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    margin: 0px 10px;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 10px;
+  }
+}
+.container12 {
+  width: 100%;
+  height: calc(100vh - 144px);
+}
+.col-3 {
+  flex: 1;
+  height: fit-content;
+}
+.button {
+  width: 170px;
+  border: none;
+  padding: 20px 0 20px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  .row-1-in-button {
+    display: flex;
+    position: relative;
+    align-items: center;
+    .icon-column-left {
+      display: flex;
+      padding-top: 2.5px;
+      margin-right: 10px;
+    }
+    .text-column-left {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      .option-in-setting {
+        font-family: "SF Pro Medium";
+        color: #00000084;
+        font-size: 14px;
+        line-height: 140%;
+      }
+      span {
+        color: #abbbc2;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+      }
+    }
+  }
+  &:hover {
+    background-color: mat.get-color-from-palette($ordercf-test-primary, 50);
+  }
+}
+.title {
+  margin: 20px 16px 12px 20px;
+  font-size: 1.5rem;
+}
+
+.active {
+  .column-light {
+    width: 4px;
+    height: 30px;
+    border-radius: 10px;
+    background-color: mat.get-color-from-palette($ordercf-test-primary, 600);
+    position: absolute;
+    right: 0;
+  }
+  .option-in-setting {
+    color: mat.get-color-from-palette($ordercf-test-primary, 600) !important;
+  }
+  .change-color-icon {
+    fill: mat.get-color-from-palette($ordercf-test-primary, 600);
+  }
+}
+
+.navbutton {
+  height: 48px;
+  width: 48px;
+  border-radius: 50px;
+  position: absolute;
+  z-index: 10;
+  bottom: 10px;
+  left: 10px;
+  cursor: pointer;
+}
+mat-drawer {
+  background: none;
+}
+mat-drawer-container {
+  background: none;
+}

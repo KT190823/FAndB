@@ -1,0 +1,201 @@
+<div class="pages" style="margin: 0 auto; position: relative; zoom: 1">
+  <div
+    class="pages1"
+    style="max-width: 960px; min-width: 350px; padding: 0 20px; margin: 0 auto"
+  >
+    <div class="title-pages">
+      <div style="font-size: 1.5em; font-weight: bold">BẢNG GIÁ</div>
+      <div class="btns">
+        <button
+          mat-raised-button
+          class="button-column-right my-custom-style button-cus"
+          (click)="onExit()"
+          style="margin-right: 10px"
+        >
+          Thoát
+        </button>
+        <button
+          mat-raised-button
+          class="button-column-right my-custom-style button-cus"
+          (click)="onSave()"
+        >
+          Lưu
+        </button>
+      </div>
+    </div>
+
+    <mat-card style="padding: 1rem" [formGroup]="form">
+      <div class="infotable">
+        <div class="form-input" style="margin: 5px 0">
+          <span class="titlea" style="width: 80px">Tên bảng giá:</span>
+          <input class="inputt" type="text" formControlName="name" />
+        </div>
+        <div class="form-input" style="margin: 5px 0">
+          <span class="titlea" style="width: 80px">Mã báo giá</span>
+          <input type="text" class="inputt" formControlName="code" />
+        </div>
+        <div class="form-input" style="margin: 5px 0">
+          <span class="titlea" style="width: 80px"> Cửa hàng: </span>
+          <input
+            type="text"
+            class="inputt"
+            formControlName="store"
+            [disabled]="true"
+          />
+        </div>
+        <div class="form-input" style="margin: 5px 0">
+          <span class="titlea" style="width: 100px">Nhập ngày:</span>
+          <mat-date-range-input
+            class="inputt"
+            [rangePicker]="picker"
+            style="padding: 3px 3px 3px 7px; align-items: center; gap: 10px"
+          >
+            <input
+              matStartDate
+              formControlName="fromDate"
+              placeholder="Từ ngày"
+            />
+            <input matEndDate formControlName="toDate" placeholder="Đến ngày" />
+          </mat-date-range-input>
+          <mat-datepicker-toggle matIconSuffix [for]="picker">
+            <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+          </mat-datepicker-toggle>
+          <mat-date-range-picker #picker></mat-date-range-picker>
+
+          <mat-error
+            *ngIf="form.controls['fromDate'].hasError('matStartDateInvalid')"
+            >Invalid start date</mat-error
+          >
+          <mat-error
+            *ngIf="form.controls['toDate'].hasError('matEndDateInvalid')"
+            >Invalid end date</mat-error
+          >
+        </div>
+        <div class="form-input">
+          <span class="titlea" style="width: 80px">Khu vực</span>
+          <input
+            class="inputt"
+            #areaInput
+            [matChipInputFor]="areaGrid"
+            [matAutocomplete]="auto"
+            (matChipInputTokenEnd)="addArea($event)"
+            [formControl]="areaCtrl"
+          />
+          <mat-autocomplete
+            #auto="matAutocomplete"
+            (optionSelected)="selectedArea($event)"
+          >
+            <mat-option
+              *ngFor="let area of filteredAreas"
+              [value]="area"
+              [disabled]="areas.includes(area?.tableSectionName)"
+            >
+              {{ area?.tableSectionName }}
+            </mat-option>
+          </mat-autocomplete>
+          <mat-chip-grid #areaGrid aria-label="Fruit selection">
+            <mat-chip-row
+              *ngFor="let area of areas"
+              (removed)="removeArea(area)"
+            >
+              {{ area }}
+              <button matChipRemove [attr.aria-label]="'remove ' + area">
+                <mat-icon>cancel</mat-icon>
+              </button>
+            </mat-chip-row>
+          </mat-chip-grid>
+        </div>
+      </div>
+
+      <ng-container formArrayName="details">
+        <div class="title-form-product">
+          <span class="">Tên sản phẩm</span>
+          <span class="">Giá gốc</span>
+          <span class="">Giá mới</span>
+          <span class="">Giảm giá</span>
+          <span class=""></span>
+        </div>
+        <ng-container *ngFor="let formDetail of details.controls; index as i">
+          <div
+            class="form-product"
+            formGroupName="{{ i }}"
+            style="padding: 5px 0"
+          >
+            <div class="form-input">
+              <select
+                class="inputt inputt1"
+                formControlName="productId"
+                (change)="
+                  onSelectProduct(
+                    details.controls[i].get('productId')?.value,
+                    i
+                  )
+                "
+              >
+                <option *ngFor="let food of fbItems" [value]="food.id">
+                  {{ food.itemName }}
+                </option>
+              </select>
+            </div>
+            <div class="form-input">
+              <input
+                type="text"
+                class="inputt"
+                formControlName="priceOld"
+                mask="separator.3"
+                thousandSeparator=","
+                [disabled]="true"
+                style="text-align-last: end"
+              />
+            </div>
+            <div class="form-input">
+              <input
+                class="inputt"
+                formControlName="price"
+                type="text"
+                mask="separator.3"
+                thousandSeparator=","
+                style="text-align-last: end"
+              />
+            </div>
+            <div class="form-input">
+              <input
+                class="inputt"
+                formControlName="discount"
+                type="number"
+                style="text-align-last: end"
+              />
+            </div>
+
+            <div style="justify-self: center" (click)="deleteProduct(i)">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="15"
+                viewBox="0 0 24 24"
+                width="15"
+              >
+                <path
+                  d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM8 9h8v10H8V9zm7.5-5l-1-1h-5l-1 1H5v2h14V4z"
+                />
+              </svg>
+            </div>
+          </div>
+        </ng-container>
+      </ng-container>
+
+      <button
+        style="
+          width: 100%;
+          background-color: inherit;
+          border: 1px dashed #c0c0c0;
+          padding: 7px 0;
+          border-radius: 7px;
+          cursor: pointer;
+        "
+        (click)="addProductForm()"
+      >
+        + Thêm dòng mới
+      </button>
+    </mat-card>
+  </div>
+</div>

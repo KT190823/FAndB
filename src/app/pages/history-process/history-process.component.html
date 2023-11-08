@@ -1,0 +1,81 @@
+<div class="pages">
+  <div class="pages1">
+    <div
+      style="
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      "
+    >
+      <h2>
+        <b>Lịch sử chế biến hóa đơn {{ orderId }}</b>
+      </h2>
+    </div>
+
+    <div class="card" style="overflow: auto; height: 90vh; padding: 1rem">
+      <table
+        mat-table
+        [dataSource]="dataSource"
+        class="mat-elevation-z8"
+        multiTemplateDataRows
+      >
+        <!-- Trạng thái hoá đơn -->
+        <ng-container matColumnDef="version">
+          <th mat-header-cell *matHeaderCellDef>Phiếu</th>
+          <td mat-cell *matCellDef="let element">
+            <div style="padding: 1rem">{{ element?.version }}</div>
+          </td>
+        </ng-container>
+        <!-- Tên món -->
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef>Tên món</th>
+          <td mat-cell *matCellDef="let element">
+            <ng-container *ngFor="let item of element.details">
+              <div class="">{{ item.productName }}</div>
+            </ng-container>
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="description">
+          <th mat-header-cell *matHeaderCellDef>Ghi chú</th>
+          <td mat-cell *matCellDef="let element">
+            <ng-container *ngFor="let item of element.details">
+              <div class="">{{ item.description }}</div>
+            </ng-container>
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="qty">
+          <th mat-header-cell *matHeaderCellDef>Số lượng</th>
+          <td mat-cell *matCellDef="let element">
+            <div style="width: 4rem; text-align: end; padding-right: 1.2rem">
+              <ng-container *ngFor="let item of element.details">
+                <div class="">
+                  <ng-container *ngIf="item.isRemove; else addItem">
+                    -{{ item.qty }}
+                  </ng-container>
+                  <ng-template #addItem> {{ item.qty }} </ng-template>
+                </div>
+              </ng-container>
+            </div>
+          </td>
+        </ng-container>
+
+        <!-- Ngày tạo hoá đơn -->
+        <ng-container matColumnDef="createdAt">
+          <th mat-header-cell *matHeaderCellDef style="text-align: center">
+            Giờ
+          </th>
+          <td mat-cell *matCellDef="let element" style="text-align: center">
+            {{ element?.createdAt | date : "H:mm" }}
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+      </table>
+    </div>
+  </div>
+</div>

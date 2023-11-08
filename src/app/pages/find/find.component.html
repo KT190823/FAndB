@@ -1,0 +1,130 @@
+<div class="pages">
+  <div class="pages1">
+    <div
+      class="header"
+      style="
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      "
+    >
+      <div class="header-row">
+        <h2 class="headings" style="margin: 5px">Chọn món ăn</h2>
+      </div>
+      <div class="header-row">
+        <input
+          type="text"
+          [formControl]="search"
+          style="
+            height: 48px;
+            width: 220px;
+            border-radius: 8px;
+            border: 1px solid var(--base-dark-line, #393c49);
+            padding: 1rem;
+          "
+          placeholder="Ví dụ: Cà phê"
+        />
+      </div>
+    </div>
+    <mat-card style="background-color: #fdfdfd00; box-shadow: none">
+      <div>
+        <!-- <section
+          style="display: flex;flex-direction: row;height: 140px;overflow-x: auto;">
+          <ul
+            style="text-align: left;list-style: none;margin: 0;display: flex;align-items: stretch;justify-content: flex-start;width: -moz-fit-content;width: fit-content;padding-top: 10px;padding-bottom: 10px;padding-left: calc(50% - var(--viewport-content) / 2);padding-right: calc(50% - var(--viewport-content) / 2);">
+            <ng-container *ngFor="let menu of menus; let i = index">
+              <div style="margin: 10px; width: 60px; height: 100px">
+                <div style="text-align: center;background: #f8dfb7;border-radius: 20px;display: flex;justify-content: center;flex-wrap: wrap;align-content: center;height: 60px;box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);">
+                  <img class="img-responsive" style="margin-block-start: auto" src="{{ menu.images }}"/>
+                </div>
+                <div>
+                  <h6 style="text-align: center; margin: 5px">{{ menu.name }}</h6>
+                </div>
+              </div>
+            </ng-container>
+          </ul>
+        </section> -->
+
+        <mat-tab-group
+          mat-stretch-tabs="false"
+          mat-align-tabs="start"
+          mat-stretch-tabs="false"
+          mat-align-tabs="start"
+          animationDuration="0ms"
+          disableRipple
+        >
+          <mat-tab label="All">
+            <cdk-virtual-scroll-viewport
+              appendOnly
+              itemSize="1"
+              class="example-viewport"
+              style="padding-bottom: 5px"
+            >
+              <div class="box" *ngFor="let item of menunew">
+                <div
+                  class="card-food"
+                  matRipple
+                  [matRippleCentered]="false"
+                  [matRippleDisabled]="false"
+                  (click)="addItem(item)"
+                >
+                  <div class="card-color"></div>
+                  <div class="card-content">
+                    <div class="card-info">Orders -> Kitchen</div>
+                    <div class="card-items">
+                      <div class="headings-4" style="margin: 0px">
+                        {{ item.itemName }}
+                      </div>
+                      <div class="headings-h6" style="margin: 0px">
+                        {{ item.unitPrice | currency : "VND" : "" }}₫
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- <div class="testhiden">
+                  <div class="btnaddd"></div>
+                </div> -->
+              </div>
+            </cdk-virtual-scroll-viewport>
+          </mat-tab>
+          <ng-container *ngFor="let itemcate of category">
+            <mat-tab label="{{ itemcate.categoryName }}">
+              <cdk-virtual-scroll-viewport
+                appendOnly
+                itemSize="1"
+                class="example-viewport"
+              >
+                <ng-container *ngFor="let item of menunew">
+                  <div class="box" *ngIf="itemcate.id == item.categoryId">
+                    <div
+                      class="card-food"
+                      matRipple
+                      [matRippleCentered]="false"
+                      [matRippleDisabled]="false"
+                      (click)="addItem(item)"
+                    >
+                      <div class="card-color"></div>
+                      <div class="card-content">
+                        <div class="card-info">Orders -> Kitchen</div>
+                        <div class="card-items">
+                          <div class="headings-4" style="margin: 0px">
+                            {{ item.itemName }}
+                          </div>
+                          <div class="headings-h6" style="margin: 0px">
+                            {{ item.unitPrice | currency : "VND" : "" }}₫
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </ng-container>
+              </cdk-virtual-scroll-viewport>
+            </mat-tab>
+          </ng-container>
+        </mat-tab-group>
+      </div>
+    </mat-card>
+  </div>
+</div>

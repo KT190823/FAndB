@@ -1,0 +1,68 @@
+<div class="liPages">
+  <div class="LayerParent">
+    <div class="head-in-column-right">
+      <div class="title-column-right">
+        <!-- <p>Chỉnh sửa Máy in</p> -->
+      </div>
+      <button
+        mat-raised-button
+        class="button-column-right my-custom-style button-cus"
+        tabindex="1"
+        (click)="onSubmit()"
+      >
+        Lưu thay đổi
+      </button>
+    </div>
+    <div
+      class="bodyyy my-background-50"
+      style="
+        background: white;
+        box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2),
+          0px 8px 10px 1px rgba(0, 0, 0, 0.14),
+          0px 3px 14px 2px rgba(0, 0, 0, 0.12);
+      "
+    >
+      <div class="col1">
+        <div class="row1">
+          <div class="name-col heading4">Máy in hoá đơn</div>
+        </div>
+        <div class="row2">
+          <input
+            style="padding: 10px; width: 100%"
+            type="text"
+            placeholder="Nhập tên máy in"
+            [(ngModel)]="printerInputInvoice"
+          />
+        </div>
+      </div>
+
+      <div class="col1 col2">
+        <div class="row1">
+          <div class="heading4">Máy in phiếu ăn</div>
+        </div>
+        <div class="row2">
+          <input
+            style="padding: 10px; width: 100%"
+            type="text"
+            placeholder="Nhập tên máy in"
+            [(ngModel)]="printerInputProcess"
+          />
+        </div>
+      </div>
+
+      <div class="col1 col2">
+        <div class="row1">
+          <div class="heading4">Máy in nước uống</div>
+        </div>
+        <div class="row2">
+          <input
+            style="padding: 10px; width: 100%"
+            type="text"
+            placeholder="Nhập tên máy in"
+            [(ngModel)]="printerInputDrink"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

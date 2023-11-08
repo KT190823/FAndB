@@ -1,0 +1,36 @@
+<div style="margin: 10px;">
+    <div style="height: 100%; width: 100%;display: flex;">
+        <img style="background-image: url('../../../../assets/images/coffee1.png');width: 50%;background-size: cover;background-position: center;border-radius: 10px;">
+        <div style="display: flex;
+        flex-direction: column;
+        width: 50%;
+        align-items: flex-start;
+        margin-left: 10px;">
+            <caption>Nameitems</caption>
+            <h6>Hương vị mùa hè thanh mát gói trọn trong một ly Smoothie Xoài Nhiệt Đới Granola.</h6>
+        </div>
+    </div>
+    <h2 style="margin-bottom: 0px;">Drink Size</h2>
+    <mat-chip-listbox #a1 hideSingleSelectionIndicator=true [value]="0" deselect>
+        <mat-chip-option *ngFor="let menu of sizes" style="height: 80px;width: 80px;border-radius: 50%;" [value]="menu.money">
+          <div style="text-align: center;">
+            <img class="img-responsive" style="margin-block-start: auto;width: 80%;" src={{menu.images}}/>
+            <div><h6 style="text-align: center; margin: 5px;">{{menu.name}}</h6></div>
+          </div>
+        </mat-chip-option>
+    </mat-chip-listbox>
+    <mat-button-toggle-group style="display: flex;justify-content: space-around;border-radius: 20px;background: rgb(224, 224, 224);" >
+      <ng-container hideSingleSelectionIndicator=true>
+        <mat-chip-option style="flex:1;margin: 5px;border-radius: 20px;">S</mat-chip-option>
+        <mat-chip-option style="flex:1;margin: 5px;border-radius: 20px;">M</mat-chip-option>
+        <mat-chip-option style="flex:1;margin: 5px;border-radius: 20px;">L</mat-chip-option>
+      </ng-container>
+    </mat-button-toggle-group>
+    <h2 style="margin: 0px;">Toppings </h2>
+    <mat-chip-listbox #sele hideSingleSelectionIndicator=true [value]="0">
+        <mat-chip-option *ngFor="let topp of toppings" [value]="topp.money">
+          {{topp.name}}
+        </mat-chip-option>
+    </mat-chip-listbox>
+    <button mat-raised-button color="primary" style="width: 100%;">{{ 20000 + a1.value + sele.value | currency:'VND'}} Order</button>
+</div>

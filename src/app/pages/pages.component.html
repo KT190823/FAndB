@@ -1,0 +1,155 @@
+<div class="mobile">
+  <mat-drawer-container
+    style="height: 100%; position: relative"
+    [hasBackdrop]="hasBackdrop"
+  >
+    <mat-drawer #drawer [mode]="mode" [opened]="openNav" class="col-2">
+      <app-nav-bar style="width: 100%"></app-nav-bar>
+    </mat-drawer>
+
+    <mat-drawer-content
+      class="col-6 my-background-50"
+      style="display: flex; flex-direction: column"
+    >
+      <div style="width: 100%; height: -webkit-fill-available">
+        <mat-toolbar class="toolbar">
+          <ng-container>
+            <button
+              mat-icon-button
+              aria-label="Example icon-button with menu icon"
+              (click)="drawer.toggle()"
+            >
+              <mat-icon class="example-icon">
+                <svg
+                  width="24px"
+                  height="24px"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  transform="matrix(1, 0, 0, 1, 0, 0)"
+                >
+                  <path
+                    d="M21.97 15V9C21.97 4 19.97 2 14.97 2H8.96997C3.96997 2 1.96997 4 1.96997 9V15C1.96997 20 3.96997 22 8.96997 22H14.97C19.97 22 21.97 20 21.97 15Z"
+                    stroke="#292D32"
+                    stroke-width="1.608"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                  <path
+                    d="M7.96997 2V22"
+                    stroke="#292D32"
+                    stroke-width="1.608"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                  <path
+                    d="M14.97 9.43994L12.41 11.9999L14.97 14.5599"
+                    stroke="#292D32"
+                    stroke-width="1.608"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                </svg>
+              </mat-icon>
+            </button>
+          </ng-container>
+          <div style="height: max-content; margin-left: 10px">
+            <div
+              class="nameRes nocopy"
+              [ngStyle]="{ 'font-size.px': fontsize }"
+              (click)="home()"
+            >
+              {{ nameRestaraunt }}
+            </div>
+            <!-- <div class="addressRes">
+              {{ addressRestaraunt }}
+            </div> -->
+          </div>
+          <div style="height: 48px; margin-left: 10px"></div>
+          <span class="example-spacer"></span>
+          <!-- <button
+            mat-icon-button
+            aria-label="Example icon-button with heart icon"
+          >
+            <mat-icon class="example-icon favorite-icon">favorite</mat-icon>
+          </button> -->
+          <button
+            mat-icon-button
+            aria-label="Example icon-button with share icon"
+            (click)="data.toggle()"
+            (click)="dataright(data.opened)"
+          >
+            <mat-icon class="example-icon">
+              <svg
+                width="24px"
+                height="24px"
+                viewBox="0 0 24.00 24.00"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M21.97 15V9C21.97 4 19.97 2 14.97 2H8.96997C3.96997 2 1.96997 4 1.96997 9V15C1.96997 20 3.96997 22 8.96997 22H14.97C19.97 22 21.97 20 21.97 15Z"
+                  stroke="#292D32"
+                  stroke-width="1.608"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+                <path
+                  d="M14.97 2V22"
+                  stroke="#292D32"
+                  stroke-width="1.608"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+                <path
+                  d="M7.96997 9.43994L10.53 11.9999L7.96997 14.5599"
+                  stroke="#292D32"
+                  stroke-width="1.608"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+              </svg>
+            </mat-icon>
+          </button>
+        </mat-toolbar>
+
+        <div>
+          <router-outlet></router-outlet>
+        </div>
+      </div>
+    </mat-drawer-content>
+    <mat-drawer
+      #data
+      [mode]="mode"
+      [opened]="openData"
+      position="end"
+      class="col-4"
+      autoFocus="false"
+    >
+      <!-- <div style="position: absolute; right: 1rem; top: 1rem; z-index: 5">
+        <button
+          mat-icon-button
+          aria-label="Example icon-button with menu icon"
+          (click)="data.toggle()"
+          (click)="dataright(data.opened)"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M5.29289 5.29289C5.68342 4.90237 6.31658 4.90237 6.70711 5.29289L12 10.5858L17.2929 5.29289C17.6834 4.90237 18.3166 4.90237 18.7071 5.29289C19.0976 5.68342 19.0976 6.31658 18.7071 6.70711L13.4142 12L18.7071 17.2929C19.0976 17.6834 19.0976 18.3166 18.7071 18.7071C18.3166 19.0976 17.6834 19.0976 17.2929 18.7071L12 13.4142L6.70711 18.7071C6.31658 19.0976 5.68342 19.0976 5.29289 18.7071C4.90237 18.3166 4.90237 17.6834 5.29289 17.2929L10.5858 12L5.29289 6.70711C4.90237 6.31658 4.90237 5.68342 5.29289 5.29289Z"
+              fill="#0F1729"
+            />
+          </svg>
+        </button>
+      </div> -->
+      <app-right-column></app-right-column>
+    </mat-drawer>
+  </mat-drawer-container>
+</div>

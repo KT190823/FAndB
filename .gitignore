@@ -8,8 +8,15 @@
 
 # Node
 /node_modules
+/Electron/node_modules
+/Electron/pubpub
 npm-debug.log
 yarn-error.log
+/AppMobile/node_modules 
+/AppMobile/ios
+/android
+/ReactNative/node_modules
+
 
 # IDEs and editors
 .idea/
@@ -40,3 +47,5 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+yarn.lock
+/ReactNative/package-lock.json

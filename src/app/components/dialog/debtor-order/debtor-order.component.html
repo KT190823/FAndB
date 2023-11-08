@@ -1,0 +1,16 @@
+<div mat-dialog-title class="heading-1">Thanh toán</div>
+<div mat-dialog-content>
+  <p>Họ tên người nợ</p>
+  <input style="padding: 10px" [(ngModel)]="data.debtorname" />
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">No</button>
+  <button
+    mat-button
+    [mat-dialog-close]="data"
+    cdkFocusInitial
+    (click)="onSubmit(data.debtorname)"
+  >
+    Yes
+  </button>
+</div>

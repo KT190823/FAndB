@@ -1,0 +1,130 @@
+<div style="display: flex; flex-direction: column; height: 100%;">
+    <!-- Tieu de -->
+    <mat-toolbar>
+        <span>My Application</span>
+        <span class="example-spacer"></span>
+        <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+            <mat-icon matBadge='5' matBadgeColor="accent">shopping_cart</mat-icon>
+        </button>
+    </mat-toolbar>
+    <div style="margin: 0px;">
+        <p style="font-size: 40px;
+        font-style: normal;
+        font-weight: 800;margin-bottom: 5px;">Good morning, Sir</p>
+
+
+        <!-- Cateogries1 -->
+        <div>
+            <p style="margin-left: 5px;margin-top: 0px;margin-bottom: 0px;">Cateogries</p>
+            <section style="display: flex;flex-direction: row;height: 140px;    overflow-x: auto;">
+                <ul style="text-align: left;list-style: none;margin: 0;display: flex;align-items: stretch;justify-content: flex-start;width: -moz-fit-content;width: fit-content;padding-top: 10px;padding-bottom: 10px;padding-left: calc(50% - var(--viewport-content)/2);padding-right: calc(50% - var(--viewport-content)/2);">
+                    <ng-container *ngFor="let menu of menus; let i = index;" >
+                        <div style="margin: 10px;width: 60px;height: 100px;" (click)="a1(menu.name)">
+                            <div style="
+                            text-align: center;
+                            background: #f8dfb7;
+                            border-radius: 20px;
+                            display: flex;
+                            justify-content: center;
+                            flex-wrap: wrap;
+                            align-content: center;
+                            height: 60px;
+                            box-shadow: 0px 10px 20px rgba(0,0,0,0.1)"
+                            >
+                                <img class="img-responsive" style="margin-block-start: auto;" src={{menu.images}}>
+                            </div>
+                            <div>
+                                <h6 style="text-align: center; margin: 5px;">{{menu.name}}</h6>
+                            </div>
+                        </div>
+                    </ng-container>
+                </ul>
+            </section>
+        </div>
+        
+        <!-- Items1 -->
+        <!-- <swiper-container 
+            class="mySwiper" 
+            pagination="true" 
+            effect="coverflow" 
+            grab-cursor="true" 
+            centered-slides="true"
+            slides-per-view="auto" 
+            coverflow-effect-rotate="50" 
+            coverflow-effect-stretch="0" 
+            coverflow-effect-depth="100"
+            coverflow-effect-modifier="1" 
+            coverflow-effect-slide-shadows="true">
+                <swiper-slide *ngFor="let item of bass; let i = index;" (click)="openBottomSheet()">
+                    <img style="margin-block-start: auto; width: 90%;align-self: center;" src="../../../assets/images/items1.png">
+                    <h1 style="color: aliceblue;margin: 5px;">{{item.name}}</h1>
+                    <p>a</p>
+                    <div style="display: flex;flex-direction: row;    width: 100%;justify-content: space-between;">
+                        <h2 style="margin: 5px;color: aliceblue;">{{item.money | currency:'VND'}}</h2>
+                        <button mat-raised-button>Basic</button>
+                    </div>
+                </swiper-slide>
+        </swiper-container> -->
+
+        <!-- Items2 -->
+        <!-- <div style="flex: 5;display: flex;flex-direction: column;align-items: center;overflow: auto;justify-content: center;align-content: flex-start;">
+            <ng-container *ngFor="let item of bass; let i = index;" >
+                <mat-card style="display: flex;margin-bottom: 10px;width: 90%;height: 100px;border-radius: 10px;background: #8b8b8b;flex-direction: row;" (click)="openBottomSheet()">
+                    <div style="background-image: url({{item.images}});margin:5px; width: 100px;background-size: cover;background-position-x: center;display: flex;flex-wrap: wrap;border-radius: 10px;box-shadow: 0px 10px 20px rgba(0,0,0,0.1)"></div>
+                    <div style="display: flex;width: 100%;height: 30%;border-radius: 30px;align-self: end;">
+                        <div style="flex:1"><h2 style="margin: 5px;color: white;">{{item.name}}</h2></div>
+                    </div>
+                </mat-card>
+            </ng-container>
+        </div> -->
+
+        <!-- Items3 -->
+        <!-- <swiper-container 
+            class="mySwiper" 
+            pagination="true" 
+            effect="coverflow" 
+            grab-cursor="true" 
+            centered-slides="true"
+            slides-per-view="auto" 
+            coverflow-effect-rotate="50" 
+            coverflow-effect-stretch="0" 
+            coverflow-effect-depth="100"
+            coverflow-effect-modifier="1" 
+            coverflow-effect-slide-shadows="true">
+                <swiper-slide *ngFor="let item of bass; let i = index;" (click)="openBottomSheet()">
+                    <div style="background-image: url({{item.images}});background-color: aliceblue;margin:10px; width: 200px;height: 200px;background-size: cover;background-position-x: center;display: flex;flex-wrap: wrap;border-radius: 10px;box-shadow: 0px 10px 20px rgba(0,0,0,0.1)"></div>
+                    <h1 style="color: aliceblue;margin: 5px;">veg{{item.name}}</h1>
+                    <p>a</p>
+                    <div style="display: flex;flex-direction: row;    width: 100%;justify-content: space-between;">
+                        <h2 style="margin: 5px;color: aliceblue;">{{item.money | currency:'VND'}}</h2>
+                        <button mat-raised-button>Basic</button>
+                    </div>
+                </swiper-slide>
+        </swiper-container> -->
+
+        <!-- Items4 -->
+        <swiper-container 
+            class="mySwiper" 
+            pagination="true" 
+            effect="coverflow" 
+            grab-cursor="true" 
+            centered-slides="true"
+            slides-per-view="auto" 
+            coverflow-effect-rotate="50" 
+            coverflow-effect-stretch="0" 
+            coverflow-effect-depth="100"
+            coverflow-effect-modifier="1" 
+            coverflow-effect-slide-shadows="true">
+                <swiper-slide *ngFor="let item of bass; let i = index;" (click)="openBottomSheet()">
+                    <img style="width: var(--space-122);height: var(--space-122);;align-self: center;border-radius: 20px;" src="{{item.images}}">
+                    <h1 style="color: aliceblue;margin: 5px;text-align: initial;">{{item.name}}</h1>
+                    <h4>a</h4>
+                    <div style="display: flex;flex-direction: row;    width: 100%;justify-content: space-between;">
+                        <h2 style="margin: 5px;color: aliceblue;">{{item.money | currency:'VND'}}</h2>
+                        <button mat-raised-button>Basic</button>
+                    </div>
+                </swiper-slide>
+        </swiper-container>
+
+    </div>
+</div>

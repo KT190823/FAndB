@@ -1,0 +1,155 @@
+<div class="right-column">
+  <div class="pages12">
+    <!-- THÔNG TIN BÀN -->
+    <div style="display: flex; flex-direction: column; width: 100%">
+      <div
+        class="headline-title"
+        style="display: flex; flex-direction: column; width: 100%"
+      >
+        <div>Bàn: {{ table?.tableName }}</div>
+        <div>Khu vực: {{ section?.tableSectionName }}</div>
+      </div>
+
+      <!-- hinhf casi ban -->
+      <div
+        style="
+          display: flex;
+          justify-content: center;
+          width: 100%;
+          margin-top: 1rem;
+        "
+      >
+        <div style="height: 12rem; width: 12rem; padding: 1rem">
+          <!-- Ghe -->
+          <div style="display: flex; flex-direction: row; width: 100%">
+            <div
+              style="
+                flex: 1;
+                flex: 1;
+                display: flex;
+                justify-content: flex-end;
+                padding-right: 10px;
+              "
+            >
+              <div
+                style="
+                  height: 20px;
+                  width: 60px;
+                  border-radius: 20px 20px 5px 5px;
+                  background: #fff;
+                  border: 0.1px solid #000;
+                "
+              ></div>
+            </div>
+            <div
+              style="
+                flex: 1;
+                flex: 1;
+                display: flex;
+                justify-content: flex-start;
+                padding-left: 10px;
+              "
+            >
+              <div
+                style="
+                  height: 20px;
+                  width: 60px;
+                  border-radius: 20px 20px 5px 5px;
+                  background: #fff;
+                  border: 0.1px solid #000;
+                "
+              ></div>
+            </div>
+          </div>
+          <!-- Ban -->
+          <div>
+            <div
+              class="my-custom-style"
+              style="
+                width: 100%;
+                border-radius: 5px;
+                box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+                margin-top: 5px;
+                margin-bottom: 5px;
+                height: 100px;
+                background: #ddd8d3;
+                width: 100%;
+                border-radius: 5px;
+                box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+                margin-top: 5px;
+                margin-bottom: 5px;
+              "
+              matRipple
+              [matRippleDisabled]="false"
+            ></div>
+          </div>
+          <!-- Ghe -->
+          <div style="display: flex; flex-direction: row; width: 100%">
+            <div
+              style="
+                flex: 1;
+                flex: 1;
+                display: flex;
+                justify-content: flex-end;
+                padding-right: 10px;
+              "
+            >
+              <div
+                style="
+                  height: 20px;
+                  width: 60px;
+                  border-radius: 5px 5px 20px 20px;
+                  background: #fff;
+                  border: 0.1px solid #000;
+                "
+              ></div>
+            </div>
+            <div
+              style="
+                flex: 1;
+                flex: 1;
+                display: flex;
+                justify-content: flex-start;
+                padding-left: 10px;
+              "
+            >
+              <div
+                style="
+                  height: 20px;
+                  width: 60px;
+                  border-radius: 5px 5px 20px 20px;
+                  background: #fff;
+                  border: 0.1px solid #000;
+                "
+              ></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="flex: 1 1 auto; margin: 0"></div>
+    <!-- NÚT MỞ BÀN -->
+    <div style="width: 100%">
+      <div
+        class="button"
+        matRipple
+        [matRippleDisabled]="false"
+        (click)="createdInvoice()"
+        style="width: 100%"
+      >
+        <div class="button-text">Mở bàn</div>
+      </div>
+    </div>
+    <div style="width: 100%">
+      <div
+        class="button"
+        matRipple
+        [matRippleDisabled]="false"
+        (click)="close()"
+        style="width: 100%"
+      >
+        <div class="button-text">Huỷ</div>
+      </div>
+    </div>
+  </div>
+</div>

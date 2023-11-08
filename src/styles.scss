@@ -1,1 +1,631 @@
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use "@angular/material" as mat;
+// Plus imports for other components in your app.
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$ordercf-test-primary: mat.define-palette(mat.$brown-palette);
+$ordercf-test-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+// The warn palette is optional (defaults to red).
+$ordercf-test-warn: mat.define-palette(mat.$brown-palette);
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$ordercf-test-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $ordercf-test-primary,
+      accent: $ordercf-test-accent,
+      warn: $ordercf-test-accent,
+    ),
+  )
+);
+$ordercf-test-theme2: mat.define-dark-theme(
+  (
+    color: (
+      primary: $ordercf-test-primary,
+      accent: $ordercf-test-accent,
+      warn: $ordercf-test-accent,
+    ),
+  )
+);
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($ordercf-test-theme);
+
 /* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+  font-family: "SF Pro Medium" !important;
+}
+
+body {
+  margin: 0;
+  touch-action: manipulation;
+}
+
+:root {
+  --scale-unit: 1rem;
+  --space-2: calc(var(--scale-unit) * 0.125);
+  --space-4: calc(var(--scale-unit) * 0.25);
+  --space-6: calc(var(--scale-unit) * 0.375);
+  --space-8: calc(var(--scale-unit) * 0.5);
+  --space-10: calc(var(--scale-unit) * 0.625);
+  --space-12: calc(var(--scale-unit) * 0.75);
+  --space-14: calc(var(--scale-unit) * 0.875);
+  --space-15: calc(var(--scale-unit) * 0.9375);
+  --space-16: calc(var(--scale-unit) * 0.8375);
+  --space-18: calc(var(--scale-unit) * 1.125);
+  --space-20: calc(var(--scale-unit) * 1.25);
+  --space-22: calc(var(--scale-unit) * 1.375);
+  --space-24: calc(var(--scale-unit) * 1.5);
+  --space-26: calc(var(--scale-unit) * 1.625);
+  --space-28: calc(var(--scale-unit) * 1.75);
+  --space-30: calc(var(--scale-unit) * 1.875);
+  --space-32: calc(var(--scale-unit) * 2);
+  --space-36: calc(var(--scale-unit) * 2.25);
+  --space-38: calc(var(--scale-unit) * 2.375);
+  --space-40: calc(var(--scale-unit) * 2.5);
+  --space-42: calc(var(--scale-unit) * 2.625);
+  --space-44: calc(var(--scale-unit) * 2.75);
+  --space-46: calc(var(--scale-unit) * 2.875);
+  --space-48: calc(var(--scale-unit) * 3);
+  --space-50: calc(var(--scale-unit) * 3.125);
+  --space-52: calc(var(--scale-unit) * 3.25);
+  --space-54: calc(var(--scale-unit) * 3.375);
+  --space-56: calc(var(--scale-unit) * 3.5);
+  --space-58: calc(var(--scale-unit) * 3.625);
+  --space-60: calc(var(--scale-unit) * 3.75);
+  --space-62: calc(var(--scale-unit) * 3.875);
+  --space-64: calc(var(--scale-unit) * 4);
+  --space-66: calc(var(--scale-unit) * 4.125);
+  --space-68: calc(var(--scale-unit) * 4.25);
+  --space-70: calc(var(--scale-unit) * 4.375);
+  --space-72: calc(var(--scale-unit) * 4.5);
+  --space-74: calc(var(--scale-unit) * 4.625);
+  --space-76: calc(var(--scale-unit) * 4.75);
+  --space-78: calc(var(--scale-unit) * 4.875);
+  --space-80: calc(var(--scale-unit) * 5);
+  --space-84: calc(var(--scale-unit) * 5.25);
+  --space-86: calc(var(--scale-unit) * 5.375);
+  --space-88: calc(var(--scale-unit) * 5.5);
+  --space-90: calc(var(--scale-unit) * 5.625);
+  --space-94: calc(var(--scale-unit) * 5.875);
+  --space-98: calc(var(--scale-unit) * 6.125);
+  --space-100: calc(var(--scale-unit) * 6.25);
+  --space-102: calc(var(--scale-unit) * 6.375);
+  --space-104: calc(var(--scale-unit) * 6.5);
+  --space-108: calc(var(--scale-unit) * 6.75);
+  --space-110: calc(var(--scale-unit) * 6.875);
+  --space-112: calc(var(--scale-unit) * 7);
+  --space-114: calc(var(--scale-unit) * 7.125);
+  --space-118: calc(var(--scale-unit) * 7.375);
+  --space-122: calc(var(--scale-unit) * 7.625);
+  --space-128: calc(var(--scale-unit) * 8);
+  --space-132: calc(var(--scale-unit) * 8.25);
+  --space-138: calc(var(--scale-unit) * 8.625);
+  --space-140: calc(var(--scale-unit) * 8.75);
+  --space-150: calc(var(--scale-unit) * 9.375);
+  --space-152: calc(var(--scale-unit) * 9.5);
+  --space-156: calc(var(--scale-unit) * 9.75);
+  --space-160: calc(var(--scale-unit) * 10);
+  --space-166: calc(var(--scale-unit) * 10.375);
+  --space-176: calc(var(--scale-unit) * 11);
+  --space-184: calc(var(--scale-unit) * 11.5);
+  --space-188: calc(var(--scale-unit) * 11.75);
+  --space-196: calc(var(--scale-unit) * 12.25);
+  --space-200: calc(var(--scale-unit) * 12.5);
+  --space-210: calc(var(--scale-unit) * 13.125);
+  --space-250: calc(var(--scale-unit) * 15.625);
+  --space-252: calc(var(--scale-unit) * 15.75);
+  --space-260: calc(var(--scale-unit) * 16.25);
+  --space-278: calc(var(--scale-unit) * 17.375);
+  --space-280: calc(var(--scale-unit) * 17.5);
+  --space-300: calc(var(--scale-unit) * 18.75);
+  --space-310: calc(var(--scale-unit) * 19.375);
+  --space-336: calc(var(--scale-unit) * 21);
+  --space-342: calc(var(--scale-unit) * 21.4375);
+  --space-356: calc(var(--scale-unit) * 22.25);
+  --space-360: calc(var(--scale-unit) * 22.5);
+  --space-376: calc(var(--scale-unit) * 23.5);
+  --space-410: calc(var(--scale-unit) * 25.625);
+  --space-420: calc(var(--scale-unit) * 26.25);
+  --space-464: calc(var(--scale-unit) * 29);
+  --space-520: calc(var(--scale-unit) * 32.5);
+  --space-548: calc(var(--scale-unit) * 34.25);
+  --space-588: calc(var(--scale-unit) * 33);
+  --space-640: calc(var(--scale-unit) * 40);
+  --space-750: calc(var(--scale-unit) * 46.875);
+  --space-786: calc(var(--scale-unit) * 48);
+  --space-1112: calc(var(--scale-unit) * 69.5);
+}
+
+mat-grid-tile-content {
+  display: block;
+}
+
+.my-custom-style {
+  background-color: mat.get-color-from-palette($ordercf-test-primary, 400);
+}
+
+.my-custom-text {
+  color: mat.get-color-from-palette($ordercf-test-primary, 400);
+}
+.my-background-100 {
+  background-color: mat.get-color-from-palette($ordercf-test-warn, 100);
+}
+
+.my-background-50 {
+  background-color: mat.get-color-from-palette($ordercf-test-warn, 50);
+}
+
+@mixin font-face($family, $path, $file, $weight: normal, $style: normal) {
+  @font-face {
+    font-family: $family;
+    src: url($path + $file + ".otf") format("opentype");
+    font-weight: $weight;
+    font-style: $style;
+  }
+}
+
+@include font-face(
+  "SF Pro Black",
+  "./assets/fonts/SFprotext/",
+  "SF-Pro-Rounded-Black"
+);
+@include font-face(
+  "SF Pro Bold",
+  "./assets/fonts/SFprotext/",
+  "SF-Pro-Rounded-Bold"
+);
+@include font-face(
+  "SF Pro Heavy",
+  "./assets/fonts/SFprotext/",
+  "SF-Pro-Rounded-Heavy"
+);
+@include font-face(
+  "SF Pro Light",
+  "./assets/fonts/SFprotext/",
+  "SF-Pro-Rounded-Light"
+);
+@include font-face(
+  "SF Pro Medium",
+  "./assets/fonts/SFprotext/",
+  "SF-Pro-Rounded-Medium"
+);
+@include font-face(
+  "SF Pro Regular",
+  "./assets/fonts/SFprotext/",
+  "SF-Pro-Rounded-Regular"
+);
+@include font-face(
+  "SF Pro Semibold",
+  "./assets/fonts/SFprotext/",
+  "SF-Pro-Rounded-Semibold"
+);
+@include font-face(
+  "SF Pro Thin",
+  "./assets/fonts/SFprotext/",
+  "SF-Pro-Rounded-Thin"
+);
+@include font-face(
+  "SF Pro Ultralight",
+  "./assets/fonts/SFprotext/",
+  "SF-Pro-Rounded-Ultralight"
+);
+
+.pages {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  .pages1 {
+    margin: 10px;
+    height: 100%;
+    .title-pages {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+      padding: 5px 0;
+    }
+  }
+}
+.headline-title {
+  font-family: "SF Pro Regular";
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 140%;
+}
+
+.inputapi {
+  border: 0px;
+  background: none;
+}
+
+.heading1 {
+  font-family: "SF Pro Regular";
+  font-size: 4.25rem;
+  line-height: 4.5rem;
+  font-weight: 500;
+}
+.heading2 {
+  font-family: "SF Pro Regular";
+  font-size: 2.625rem;
+  line-height: 3rem;
+  font-weight: 500;
+}
+.heading3 {
+  font-family: "SF Pro Regular";
+  font-size: 1.625rem;
+  line-height: 2.5rem;
+  font-weight: 500;
+}
+.heading4 {
+  font-family: "SF Pro Regular";
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.5rem;
+}
+.headingBodyLight {
+  font-family: "SF Pro Regular";
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.5rem;
+}
+.headingBodyRegular {
+  font-family: "SF Pro Regular";
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.5rem;
+}
+.headingBodyMedium {
+  font-family: "SF Pro Regular";
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.5rem;
+}
+.headingSmall {
+  font-family: "SF Pro Regular";
+  font-size: 1rem;
+  line-height: 4.5rem;
+  font-weight: bold;
+}
+.headingExtraSmall {
+  font-family: "SF Pro Regular";
+  font-size: 1rem;
+  line-height: 4.5rem;
+  font-weight: bold;
+}
+.headingCaption {
+  font-family: "SF Pro Regular";
+  font-size: 1rem;
+  line-height: 4.5rem;
+  font-weight: bold;
+}
+.headingButton {
+  font-family: "SF Pro Regular";
+  font-size: 1rem;
+  line-height: 4.5rem;
+  font-weight: bold;
+}
+img {
+  -webkit-user-drag: none;
+  -webkit-touch-callout: none;
+}
+
+.nocopy {
+  -moz-user-select: none !important;
+  -webkit-touch-callout: none !important;
+  -webkit-user-select: none !important;
+  -khtml-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+}
+
+.head-in-column-right {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  align-items: center;
+}
+.title-column-right {
+  p {
+    color: #333;
+    font-size: 22px;
+    font-weight: 600;
+  }
+}
+.button-cus {
+  padding: 18px 32px !important;
+  font-size: 13pt;
+  background: black !important;
+  color: white !important;
+}
+
+$XSS: 300px;
+$XS: 480px;
+$SM: 768px;
+$MD: 960px;
+$XL: 1280px;
+$XXL: 1480px;
+
+@mixin Responsive($canvas) {
+  @if $canvas == XSS {
+    @media only screen and (min-width: $XSS) {
+      @content;
+    }
+  }
+  @if $canvas == XS {
+    @media only screen and (min-width: $XS) {
+      @content;
+    }
+  } @else if $canvas == SM {
+    @media only screen and (min-width: $SM) {
+      @content;
+    }
+  } @else if $canvas == MD {
+    @media only screen and (min-width: $MD) {
+      @content;
+    }
+  } @else if $canvas == XL {
+    @media only screen and (min-width: $XL) {
+      @content;
+    }
+  } @else if $canvas == XXL {
+    @media only screen and (min-width: $XXL) {
+      @content;
+    }
+  }
+}
+@include Responsive(XSS) {
+  * {
+    font-size: 0.9rem;
+  }
+  body {
+    padding-top: 0;
+  }
+  .mobile {
+    height: 100vh;
+  }
+  .box-table {
+    width: 6rem;
+    height: 6rem;
+    .table {
+      .table-money {
+        visibility: hidden;
+      }
+      .table-status {
+        visibility: hidden;
+      }
+      .table-time {
+        visibility: hidden;
+      }
+    }
+  }
+  .box {
+    .card-food {
+      height: 6rem;
+      font-size: 0.6rem !important;
+      .card-info {
+        font-size: 0.5rem !important;
+      }
+    }
+  }
+
+  .headline-title {
+    font-size: 1.5rem;
+  }
+  .headingBodyMedium {
+    font-size: 0.8rem;
+  }
+  .cdk-virtual-scroll-content-wrapper {
+    grid-template-columns: 50% 50% !important;
+  }
+  .list-table-order {
+    grid: auto/auto auto auto auto;
+  }
+}
+@include Responsive(XS) {
+  * {
+    font-size: 0.8rem;
+  }
+  body {
+    padding-top: 0;
+  }
+  .mobile {
+    height: 100vh;
+  }
+  .box-table {
+    width: auto;
+    height: fit-content;
+    .table {
+      .table-money {
+        visibility: visible;
+      }
+      .table-status {
+        visibility: visible;
+      }
+      .table-time {
+        visibility: visible;
+      }
+    }
+  }
+  .box {
+    .card-food {
+      font-size: 0.6rem !important;
+      .card-info {
+        font-size: 0.5rem !important;
+      }
+    }
+  }
+  .cdk-virtual-scroll-content-wrapper {
+    grid-template-columns: 25% 25% 25% 25% !important;
+  }
+  .list-table-order {
+    grid: auto/auto auto auto;
+  }
+}
+@include Responsive(SM) {
+  * {
+    font-size: 0.84rem;
+  }
+  .list-table-order {
+    grid: auto/auto auto auto auto;
+  }
+}
+@include Responsive(MD) {
+  * {
+    font-size: 0.88rem;
+  }
+  .cdk-virtual-scroll-content-wrapper {
+    grid-template-columns: 25% 25% 25% 25% !important;
+  }
+}
+@include Responsive(XL) {
+  * {
+    font-size: 1rem;
+  }
+  .list-table-order {
+    grid: auto/16.7% 16.7% 16.7% 16.7% 16.7% 16.7%;
+  }
+}
+
+.box-table {
+  color: rgba(0, 0, 0, 0.87);
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: center;
+  // background: url(../../../assets/images/table.png);
+  // padding: 10px 10px;
+  background-size: 80% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  z-index: 1;
+  border-radius: 16px;
+}
+.box {
+  .card-food {
+    cursor: pointer;
+    background: white;
+    margin: 5px;
+    border-radius: 5px;
+    position: relative;
+    .card-color {
+      width: 10px;
+      height: -webkit-fill-available;
+      position: absolute;
+      left: 0;
+      background: #474646;
+    }
+    .card-content {
+      margin-left: 10px;
+      .card-info {
+        color: #474646;
+        font-size: 0.7rem;
+        margin: 5px;
+      }
+      .card-items {
+        color: #000;
+        margin: 5px;
+        font-size: 1.6rem;
+      }
+    }
+    &:hover {
+      box-shadow: 0px 4px 13px 0px rgba(0, 0, 0, 0.25);
+    }
+  }
+  // .testhiden {
+  //   opacity: 1;
+  //   visibility: inherit;
+  //   .btnaddd {
+  //     opacity: 1;
+  //     visibility: inherit;
+  //   }
+  // }
+}
+.cdk-virtual-scroll-content-wrapper {
+  padding: 10px;
+  display: grid !important;
+  justify-content: flex-start !important;
+}
+.mobile {
+  display: flex;
+  flex-direction: column;
+}
+
+//pages-order
+.list-table-order {
+  display: grid;
+}
+
+.form-input {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 7px;
+  flex-shrink: 0;
+  .titlea {
+    color: var(--text-secondary, rgba(0, 0, 0, 0.5));
+    text-align: right;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 14px; /* 127.273% */
+  }
+}
+.inputt {
+  display: flex;
+  padding: 3px 7px;
+  align-items: center;
+  gap: 10px;
+  border-radius: 5px;
+  background: #fff;
+  border: none;
+  box-shadow: 0px 0px 0px 0.5px rgba(0, 0, 0, 0.05),
+    0px 0.5px 2.5px 0px rgba(0, 0, 0, 0.3);
+  font-size: 13px !important;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  outline: none;
+  min-width: 50px;
+  margin: 0 2px;
+}
+.button-items {
+  display: flex;
+  width: 22px;
+  height: 22px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  cursor: pointer;
+  border-radius: 5px;
+  border: none;
+}
+
+.box-setting {
+  background: none;
+  box-shadow: 0px 0px 1px;
+}
